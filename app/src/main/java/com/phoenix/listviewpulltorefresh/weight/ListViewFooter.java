@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.phoenix.listviewpulltorefresh.R;
@@ -23,7 +24,7 @@ public class ListViewFooter extends LinearLayout {
     public static final int STATE_READY = 1;
     public static final int STATE_LOADING = 2;
 
-    private LinearLayout mContentView;
+    private RelativeLayout mContentView;
     private ProgressBar mProgressBar;
     private TextView mHintVIew;
 
@@ -38,7 +39,7 @@ public class ListViewFooter extends LinearLayout {
     }
     public void initView(Context context){
         LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, 0);
-        mContentView = (LinearLayout)LayoutInflater.from(context).inflate(R.layout.xlistview_footer,null);
+        mContentView = (RelativeLayout)LayoutInflater.from(context).inflate(R.layout.xlistview_footer,null);
         addView(mContentView,lp);
         mProgressBar = (ProgressBar)findViewById(R.id.xlistview_footer_progressbar);
         mHintVIew = (TextView)findViewById(R.id.xlistview_footer_hint_textview);
